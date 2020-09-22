@@ -1,3 +1,12 @@
+input.onPinPressed(TouchPin.P0, function () {
+    radio.sendNumber(1)
+})
+input.onButtonPressed(Button.A, function () {
+    radio.sendNumber(randint(1, 3))
+})
+input.onPinPressed(TouchPin.P2, function () {
+    radio.sendNumber(3)
+})
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "Tie") {
         basic.showString("TIE")
@@ -9,7 +18,7 @@ radio.onReceivedString(function (receivedString) {
         basic.showString("LOSS")
     }
 })
-input.onGesture(Gesture.Shake, function () {
-    radio.sendNumber(randint(1, 3))
+input.onPinPressed(TouchPin.P1, function () {
+    radio.sendNumber(2)
 })
 radio.setGroup(35)
